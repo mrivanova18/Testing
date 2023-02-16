@@ -44,5 +44,29 @@ namespace BankSystemTesting
             var ex = Assert.Throws<InvalidOperationException>(() => bankAccount.Deposit(amountDeposit));
             Assert.AreEqual(ex.Message, "Negative amount");
         }
+        [Test]
+        public void ConstructorShouldSetZeroBalance()
+        {
+            //Arrange
+            int id = 123;
+
+            //Act
+            BankAccount bankAccount = new BankAccount(id);
+
+            //Assert
+            Assert.AreEqual(0, bankAccount.Balance);
+        }
+        [Test]
+        public void IsIdSetRight()
+        {
+            //Arrange
+            int id = 123;
+
+            //Act
+            BankAccount bankAccount = new BankAccount(id);
+
+            //Assert
+            Assert.AreEqual(id, bankAccount.Id);
+        }
     }
 }
