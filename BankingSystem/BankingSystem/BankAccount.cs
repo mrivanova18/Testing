@@ -43,5 +43,16 @@ namespace BankingSystem
             }
             this.Balance += cash;
         }
+        public void Increase(double percent)
+        {
+            if (percent <= 0)
+            {
+                throw new InvalidOperationException("The percent must be positive!");
+            }
+            else
+            {
+                this.Balance = this.Balance + this.Balance * (decimal)percent;
+            }           
+        }
     }
 }
