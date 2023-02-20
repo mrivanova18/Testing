@@ -35,5 +35,13 @@ namespace BankingSystem
             }
             this.Balance += amount;
         }
+        public void Credit(decimal cash)
+        {
+            if (cash <= 0)
+            {
+                throw new InvalidOperationException("The amount must be posistive!");
+            }
+            this.Balance += cash;
+        }
     }
 }
