@@ -51,7 +51,7 @@ namespace BankingSystem
             }
             else
             {
-                this.Balance = this.Balance + this.Balance * (decimal)percent;
+                this.Balance = this.Balance + this.Balance * (decimal)percent/100;
             }           
         }
         public void Bonus()
